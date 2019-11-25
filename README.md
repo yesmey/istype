@@ -1,4 +1,8 @@
-Normal way of checking for numbers is done by something like:
-```return typeof input === 'number' || Object.prototype.toString.call(input) === '[object Number]'```
+I've noticed that a typical way of checking for type matching is done with something like this:
 
-While this method is perhaps marginally faster during execution, it does allocate on each call, so the performance gain is hidden by the garbage collector.
+```js
+isNumber =>
+return typeof input === 'number' || Object.prototype.toString.call(input) === '[object Number]'
+```
+
+This method allocates on each call and will affect the garbage collector performance if executed often (which it is in libraries such as momentjs)
