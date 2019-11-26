@@ -1,3 +1,3 @@
 export default function isString(input) {
-	return input != null && input.constructor === String;
+    return input != null && input.constructor === String;
 }
